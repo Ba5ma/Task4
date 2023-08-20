@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+/* body{
+    background-image: url("assets/bgq.jpg");
+    background-size: cover;
+} */
+
+body::after {
+    content: "";
+    background: url(assets/bgq.jpg);
+    background-size: cover;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }

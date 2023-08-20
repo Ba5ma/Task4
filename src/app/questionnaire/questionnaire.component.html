@@ -1,0 +1,17 @@
+<h4 class="welcName">Welcome {{ selectedUserName }}</h4>
+<div class="QsDiv" *ngIf="Questions.length > 0">
+  <h5>{{ Questions[currentQuestionIndex].question }}</h5>
+  <ol type="a">
+    <li *ngFor="let option of Questions[currentQuestionIndex].options">
+      <label>
+        <input type="radio" name="answer" [value]="option" (change)="selectOption(option)">
+        {{ option }}
+      </label>
+    </li>
+  </ol>
+  
+</div>
+<div>
+  <button class="btn btn-dark" *ngIf="!isAllQuestionsAnswered()" (click)="nextQuestion()">Next</button>
+  <button class="btn btn-dark" *ngIf="isAllQuestionsAnswered()" (click)="goToResults()">Submit</button>
+</div>
